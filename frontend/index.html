@@ -32,17 +32,17 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 <body>
 <header class="top">
   <div class="brand"><div class="mark">CC</div><div><strong>CareContinuum</strong><span>FOLLOW-UP OPERATIONS COCKPIT</span></div></div>
-  <div class="topright"><div class="env"><span class="live"></span>Demo data · Human approval ON</div><button class="reset" onclick="resetDemo()">Reset</button></div>
+  <div class="topright"><div class="env"><span class="live"></span>Prototype · Synthetic data · Human approval ON</div><button class="reset" onclick="resetDemo()">Reset</button></div>
 </header>
 <main class="shell">
-  <section class="head"><div><h1>Close the care loop.</h1><p>From risk signal → intervention plan → verified outcome.</p></div><button class="run" onclick="runAgent()">Run Care Agent</button></section>
+  <section class="head"><div><h1>Close the care loop.</h1><p>Agentic follow-up assurance: <b>risk → plan → approval → action → verification.</b></p></div><button class="run" onclick="runAgent()">Run Care Agent</button></section>
   <section class="kpis">
     <div class="kpi"><div><small>At-risk today</small><strong id="kRisk">1</strong></div><span class="kpi-badge bad">Priority</span></div>
     <div class="kpi"><div><small>Open actions</small><strong id="kActions">3</strong></div><span class="kpi-badge warn">Needs approval</span></div>
-    <div class="kpi"><div><small>Agent state</small><strong id="kState">Ready</strong></div><span class="kpi-badge blue">Autonomous</span></div>
+    <div class="kpi"><div><small>Agent state</small><strong id="kState">Ready</strong></div><span class="kpi-badge blue">Human-gated</span></div>
     <div class="kpi"><div><small>Closed loops</small><strong id="kClosed">0</strong></div><span class="kpi-badge good">Verified</span></div>
   </section>
-  <section class="mission"><div class="mission-tag">MISSION 01</div><div class="mission-text"><b>Find the highest-risk follow-up case</b> → prepare only the required actions → request approval → execute → verify that the patient's care journey moved forward.</div><div class="trace" id="trace">4 stages · 6 tools</div></section>
+  <section class="mission"><div class="mission-tag">MISSION 01</div><div class="mission-text"><b>Find the highest-risk follow-up case</b> → prepare only the required actions → request approval → execute → verify that the patient's care journey moved forward.</div><div class="trace" id="trace">4 stages · human approval</div></section>
 
   <section class="grid">
     <aside class="card">
@@ -76,7 +76,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 
     <aside class="card actioncard">
       <div class="cardhead"><strong>Action desk</strong><span id="actionState">Awaiting plan</span></div>
-      <div class="actionbody"><div id="actions" class="action-empty">Run the agent to generate an executable plan.<br/><br/><b>Nothing is sent or scheduled automatically.</b></div></div>
+      <div class="actionbody"><div id="actions" class="action-empty"><b>Agent waiting.</b><br/>Run the agent to generate a proposed plan.<br/><br/>Nothing is sent or scheduled automatically until you approve it.</div></div>
     </aside>
   </section>
   <div class="foot"><span>Synthetic healthcare data only. Prototype does not diagnose, prescribe or alter treatment.</span><span class="human">● Human approval required for outward-facing actions</span></div>
