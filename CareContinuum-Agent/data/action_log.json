@@ -1,0 +1,23 @@
+[
+  {
+    "action_id": "d5fb0171",
+    "patient_id": "P1007",
+    "timestamp": "2026-10-01T09:22:44",
+    "status": "verified",
+    "actions": [
+      {
+        "tool": "generate_followup_message",
+        "description": "Generate medication reminder in preferred language"
+      },
+      {
+        "tool": "create_asha_task",
+        "description": "Create prioritized ASHA/CHO follow-up task"
+      },
+      {
+        "tool": "schedule_lab_followup",
+        "description": "Schedule laboratory follow-up"
+      }
+    ],
+    "verification": "Patient moved from at-risk to re-engaged workflow."
+  }
+]

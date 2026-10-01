@@ -1,0 +1,38 @@
+[
+  {
+    "patient_id": "P1007",
+    "name": "Lakshmi",
+    "age": 56,
+    "district": "Medak",
+    "language": "Telugu",
+    "condition": "Hypertension",
+    "medicine_status": "pending",
+    "lab_status": "pending",
+    "followup_status": "missed",
+    "recent_outreach": "failed"
+  },
+  {
+    "patient_id": "P1021",
+    "name": "Ravi",
+    "age": 48,
+    "district": "Nalgonda",
+    "language": "Telugu",
+    "condition": "Type-2 Diabetes",
+    "medicine_status": "completed",
+    "lab_status": "pending",
+    "followup_status": "completed",
+    "recent_outreach": "successful"
+  },
+  {
+    "patient_id": "P1034",
+    "name": "Saroja",
+    "age": 63,
+    "district": "Warangal",
+    "language": "Telugu",
+    "condition": "Hypertension",
+    "medicine_status": "completed",
+    "lab_status": "completed",
+    "followup_status": "completed",
+    "recent_outreach": "successful"
+  }
+]
