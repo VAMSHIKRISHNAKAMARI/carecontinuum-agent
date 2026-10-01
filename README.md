@@ -1,195 +1,234 @@
 # CareContinuum Agent
 
-## Agentic Follow-up Assurance for Rural Healthcare Workflows
+<p align="center">
+  <strong>Close the care loop.</strong><br/>
+  Agentic follow-up assurance for rural healthcare workflows.
+</p>
 
-CareContinuum Agent is an agentic healthcare operations prototype designed to reduce missed follow-ups by moving from **risk detection to planned intervention and verified outcome**.
+<p align="center">
+  <a href="https://github.com/VAMSHIKRISHNAKAMARI/carecontinuum-agent">
+    <img src="https://img.shields.io/badge/status-prototype-0f766e" alt="status"/>
+  </a>
+  <a href="https://github.com/VAMSHIKRISHNAKAMARI/carecontinuum-agent">
+    <img src="https://img.shields.io/badge/hackathon-BharatAgentic%202026-1d4ed8" alt="hackathon"/>
+  </a>
+  <a href="https://github.com/VAMSHIKRISHNAKAMARI/carecontinuum-agent">
+    <img src="https://img.shields.io/badge/data-synthetic-166534" alt="synthetic data"/>
+  </a>
+</p>
 
-The system identifies a high-risk follow-up case, constructs the patient's care journey, reasons over incomplete milestones, prepares operational actions, requests human approval, executes permitted actions, and verifies whether the patient's care journey has moved forward.
+> **From risk signal → intervention plan → verified outcome.**
 
-> **From risk signal → intervention plan → verified outcome**
+## What we built
+
+CareContinuum Agent is a working agentic prototype for healthcare follow-up operations.
+
+Instead of stopping at a risk score, the system:
+
+**understands the care journey → explains the risk → creates a multi-step plan → requests human approval → executes permitted actions → verifies the resulting care state.**
+
+The prototype is designed for operational follow-up assurance. It does **not** diagnose patients, prescribe medicines, or alter treatment.
 
 ---
 
-## Problem
+## The problem
 
-A healthcare consultation being marked complete does not always mean that the patient's care journey is complete.
+A consultation being marked complete does not always mean that care is complete.
 
-Medication collection, laboratory tests, follow-up reviews, and outreach can remain pending or fail to happen. Fragmented records can make it difficult for frontline workers to identify which patient needs attention and what action should happen next.
+Medication collection, laboratory tests, follow-up reviews, and outreach can remain pending or fail to happen. Fragmented records can make it difficult for frontline workers to know:
+
+- which patient needs attention first,
+- what milestone is incomplete,
+- what action should happen next, and
+- whether the intervention actually worked.
 
 ---
 
-## Solution
+## The agentic solution
 
-CareContinuum Agent provides a closed-loop follow-up workflow:
+### Understand → Reason → Plan → Approve → Act → Verify
 
-```text
-Understand
-    ↓
-Reason
-    ↓
-Plan
-    ↓
-Use Tools
-    ↓
-Human Approval
-    ↓
-Act
-    ↓
-Verify
+| Stage | What the agent does |
+|---|---|
+| **Understand** | Links the patient's longitudinal care journey and detects incomplete milestones |
+| **Reason** | Explains operational follow-up risk using the available context |
+| **Plan** | Creates the minimum required intervention sequence |
+| **Approve** | Gates outward-facing/operational actions behind human approval |
+| **Act** | Executes the permitted prototype actions |
+| **Verify** | Checks the resulting care state and closes the workflow when progress is confirmed |
 
-The prototype focuses on operational follow-up assurance rather than clinical diagnosis or treatment decisions.
+This makes the prototype an **action-oriented agent**, not a chatbot-only interface.
 
-Agent Workflow
-1. Understand
+---
 
-Links the patient's care journey and checks pending milestones.
+## Live prototype flow
 
-2. Reason
+The demonstrated synthetic scenario uses:
 
-Explains follow-up risk using the patient's available journey information.
-
-3. Plan
-
-Creates the required operational follow-up actions.
-
-4. Human Approval
-
-External or operational actions require human approval before execution.
-
-5. Act
-
-Executes the permitted actions through the prototype action tools.
-
-6. Verify
-
-Checks the resulting care state and records whether the journey moved forward.
-
-Demonstrated Scenario
-
-Example synthetic patient:
-
-Patient: Lakshmi
-ID: P1007
-Condition: Hypertension
-Initial follow-up risk: High
-Medicine: Pending
-Lab: Pending
-Follow-up: Missed
+**Patient:** Lakshmi · P1007  
+**Condition:** Hypertension  
+**Initial state:** consultation completed, medicine pending, lab pending, follow-up missed  
+**Initial operational risk:** High
 
 The agent prepares:
 
-Medication reminder
-Prioritized ASHA/CHO follow-up task
-Laboratory follow-up
+1. Generate a medication reminder in the preferred language
+2. Create a prioritized ASHA/CHO follow-up task
+3. Schedule laboratory follow-up
 
-After human approval, the actions are executed and the resulting care state is verified.
+After approval, the prototype executes the actions and verifies the resulting care state.
 
-Demonstrated Result
-Open actions: 0
-Agent state: Verified
-Closed loops: 1
-Patient state: Re-engaged
-Verification: Passed
-Prototype Safety
+### Demonstrated outcome
 
-This prototype uses synthetic healthcare data.
+```text
+Open actions      0
+Agent state       VERIFIED
+Closed loops      1
+Patient state     RE-ENGAGED
+Verification      PASSED
+```
 
-It does not diagnose patients, prescribe medicines, or make clinical treatment decisions.
+---
 
-External or operational actions are gated by human approval.
+## Why this is agentic
 
-Technology Stack
-Python
-HTML
-CSS
-JavaScript
-Local structured healthcare data
-Agent orchestration
-Risk scoring
-Tool-based action execution
-Human approval workflow
-Verification and action logging
-Project Structure
+The prototype demonstrates:
+
+- goal-driven task execution
+- patient-journey understanding
+- risk-based prioritization
+- multi-step planning
+- tool-based action execution
+- human approval gates
+- verification after execution
+- closed-loop workflow completion
+
+---
+
+## Product interface
+
+The UI is intentionally designed as a **follow-up operations cockpit**, not a generic conversational assistant.
+
+It exposes:
+
+- priority patient queue
+- longitudinal care journey
+- agent reasoning stages
+- proposed action desk
+- human approval gate
+- execution state
+- verification state
+- closed-loop outcome
+
+---
+
+## Bharat-first design
+
+The prototype is designed around rural healthcare workflow realities, including:
+
+- frontline-worker prioritization
+- follow-up assurance
+- operational task coordination
+- synthetic longitudinal patient data
+- human-controlled external actions
+- future regional-language outreach
+- resource-constrained/offline-first design considerations
+
+---
+
+## Safety and scope
+
+This is a **prototype using synthetic healthcare data**.
+
+The system does not:
+
+- diagnose disease
+- prescribe medication
+- change treatment
+- make autonomous clinical decisions
+
+Operational/outward-facing actions are gated by human approval.
+
+---
+
+## Technology
+
+- **Backend:** Python standard library
+- **Frontend:** HTML, CSS, JavaScript
+- **Data:** Local structured synthetic healthcare data
+- **Agent:** Planner + policy gate + action tools + verifier
+- **Workflow:** Goal → plan → approval → execution → verification
+- **Runtime:** Local Windows demo
+
+---
+
+## Repository structure
+
+```text
 carecontinuum-agent/
-│
 ├── backend/
 │   └── app.py
-│
 ├── frontend/
 │   └── index.html
-│
 ├── data/
 │   ├── patients.json
 │   └── action_log.json
-│
 ├── START.bat
 ├── DEMO.md
 ├── README.md
 └── requirements.txt
-Run Locally
-Windows
+```
+
+---
+
+## Run locally
+
+### Windows
 
 Run:
 
+```text
 START.bat
+```
 
 Then open:
 
+```text
 http://127.0.0.1:5000
-Demo Workflow
-Run Care Agent
-Review Understand / Reason / Plan
-Review the proposed actions
-Approve & Execute
-Observe action execution
-Verify the final care state
-Agentic Capabilities
+```
 
-CareContinuum Agent demonstrates:
+### Demo sequence
 
-Goal-driven task execution
-Patient journey understanding
-Risk-based prioritization
-Multi-step planning
-Tool-based action execution
-Human approval gates
-Action verification
-Closed-loop workflow completion
-Bharat-First Design
+1. Click **Run Care Agent**
+2. Review **Understand → Reason → Plan**
+3. Review the proposed actions
+4. Click **Approve & execute**
+5. Observe execution
+6. Confirm **Verified** and **Closed loop = 1**
 
-The prototype is designed around rural healthcare workflow requirements such as:
+More details: [DEMO.md](./DEMO.md)
 
-Frontline worker prioritization
-Follow-up assurance
-Operational task coordination
-Synthetic patient journey data
-Human-controlled external actions
-Support for future regional-language workflows
-Design considerations for resource-constrained environments
-Hackathon
+---
 
-BharatAgentic 2026
+## Hackathon
 
-Project: CareContinuum Agent
+**BharatAgentic 2026**  
+**Project:** CareContinuum Agent  
+**Focus:** Agentic healthcare follow-up assurance for rural healthcare workflows
 
-Focus: Agentic healthcare follow-up assurance for rural healthcare workflows
+### Team
 
-Team
-Vamshi Krishna
-
+**Vamshi Krishna** — Team Lead  
 CMR Engineering College
-Team Lead
 
-Raju Jinna
-
+**Raju Jinna** — Team Member  
 CMR Engineering College
-Team Member
 
-Aravind Kumar
-
+**Aravind Kumar** — Team Member  
 CMR Engineering College
-Team Member
 
-GitHub Repository
+---
 
-https://github.com/VAMSHIKRISHNAKAMARI/carecontinuum-agent
+## Repository
+
+[github.com/VAMSHIKRISHNAKAMARI/carecontinuum-agent](https://github.com/VAMSHIKRISHNAKAMARI/carecontinuum-agent)
