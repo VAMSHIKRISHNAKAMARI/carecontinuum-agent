@@ -19,6 +19,14 @@
 
 > **From risk signal → intervention plan → verified outcome.**
 
+### 45-second jury path
+
+Use this exact flow during a live review:
+
+**Run Care Agent** → show **Lakshmi / P1007** and the three open milestones → show the agent moving through **Understand → Reason → Plan** → review the three proposed actions → point out the **Human approval gate** → click **Approve & execute** → finish on **VERIFIED / Closed loop = 1**.
+
+The key product moment is the transition from an identified care gap to an approved, executed and verified workflow.
+
 ## What we built
 
 CareContinuum Agent is a working agentic prototype for healthcare follow-up operations.
